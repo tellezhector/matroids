@@ -1,0 +1,30 @@
+\begin{definition}[Closure]
+    Given a matroid $M=(E,\c{J})$ with rank function $f$. The \textbf{closure} of a set $S \subset E$
+    is
+    \begin{align}
+        Cl(S) = \{ x \in E | r(S \cup \{ x \} ) = r(S)\}.
+    \end{align}    
+\end{definition}
+
+\begin{definition}[Closed set]
+    Given a matroid $M=(E,\c{J})$ with rank function $f$. We say that a set $S \subset E$ is \textbf{closed}
+    if
+    \begin{align}
+        Cl(S) = S.
+    \end{align}
+\end{definition}
+
+\prob
+{
+    Give an example of two closed sets whose union is not closed.
+}
+
+\begin{proof}
+    We are going to use the linear matroid of $\Z^2$, where the independent sets are 
+    $$\emptyset, \{(1, 0)\}, \{(0, 1)\}, \{(1, 1)\}, \{(1, 0), (0, 1)\}$$
+    and the rank function is the size of the biggest independent set contained.\pn
+    
+    It is clear that $A = \{(1, 0), (0, 0)\}$ and $B = \{(0, 1), (0, 0)\}$ are both closed.
+    But $C = A \cup B = \{(1, 0), (0, 1), (0, 0)\}$ is not, because $r(C) = 2 = r(C \cup \{ (1, 1) \})$ and
+    $(1, 1) \not\in C$.
+\end{proof}
