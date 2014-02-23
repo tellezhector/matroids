@@ -22,7 +22,7 @@
 
 \begin{proof}\label{t1:p1}
     \begin{enumerate}[label=(\roman*)]
-        \item\label{t1:p1:i}
+        \item\label{t1:p1i}
             Lets look for the circuits over $GF(2)$. As $0$ and $1$ are the only scalars over $GF(2)$,
             we can only pay attention to sums of the vector columns and forget about full linear combinations.\pn
             
@@ -91,12 +91,16 @@
                         
             Only by their cardinality, you can tell that the set of circuits of $M_2[A]$ and $M_3[A]$ are different.
             
-        \item\label{t1:p1:ii}
+        \item\label{t1:p1ii}
             We are going to give a graphic representation of a graph that has $M_2[A]$ as an isomorphic matroid. You can
             verify that it has all the seven circuits that we gave previously and only those.\pn
-            \begin{center}
-                \includegraphics[width=7cm]{Test1/Problem1/tetrahedron.eps}
-            \end{center}
+
+            \begin{figure}[H]
+                \centering
+                    \caption{}
+                    \includegraphics[width=6cm]{Test1/Problem1/tetrahedron.eps}
+                \label{fig:tetrahedron}
+            \end{figure}
             
             Now lets think what could happen if $M_3[A]$. For $M_3[A]$, we have the circuits 
             $\{1, 4, 5, 6\}, \{2, 4, 5, 6\}, \{3, 4, 5, 6\}$. Take any two of them, lets say
@@ -106,7 +110,47 @@
             $4$-cycle, that is, a $3$-trajectory. In any $3$-trajectory we will find $4$ vertices, so the fourth 
             edge is already determined by two of those vertices (the start vertex and the last vertex), but in this case 
             we have that $\{1, 4, 5, 6\}$, $\{2, 4, 5, 6\}$ are both $4$-cycles over the same set of vertices, 
-            and so $1$ and $2$ have exactly the same two vertices, that is, they are parallel. But in [\ref{t1:p1}.\ref{t1:p1:i}]
+            and so $1$ and $2$ have exactly the same two vertices, that is, they are parallel. But in [\ref{t1:p1}.\ref{t1:p1i}]
             we saw that $M_3[A]$ has no parallel columns. So this is a contradiction.
+        
+        \item\label{t1:p1iii}
+            We are going to give a matrix $B$ over $GF(3)$ such that $M_3[B]$ isomorfic to $M_2[A]$.\pn
+            
+            We are going to take the incidence matrix for the graphic representation [\ref{fig:tetrahedron}], and
+            choose one ``1'' from each column and change it by ``-1''. What we are doing is giving a orientation
+            to each of the edges. So, if a cycle is such that each edge has exactly outdegree 1 and indegree 1, is
+            easy to see that the sum of the respective columns will be the zero vector (each 1 will have exactly one -1 in
+            its same row).\pn
+            
+            But lets remember that we are taking linear combination over $GF(3)$, that is, we can take a column, 
+            its negative, or take the zero vector instead. So, if we have a cycle, not necessarily ``well-oriented'',
+            we can give it a ``good-orientation'' by multiplying its edges by -1 or -2 such way that each vertex 
+            has outdegree 1 and indegree 1. If we sum them, we will get the zero vector, and givin a ``good-orientation'' is
+            no other thing than finding a linear combination that sums up 0.\pn
+            
+            So, let B be the matrix
+            $$\bordermatrix{
+                    &   1   &   2   &   3   &   4   &   5   &   6   \cr
+                a   &   -1  &   0   &   0   &   1   &   -1  &   0   \cr
+                b   &   0   &   -1  &   0   &   -1  &   0   &   1   \cr
+                c   &   0   &   0   &   -1  &   0   &   1   &   -1  \cr
+                d   &   1   &   1   &   1   &   0   &   0   &   0   \cr
+            }$$
+            
+            By the explanation just given, each circuit in $M_2[A]$ is a circuit in $M_3[B]$ (note that we used the same 
+            labels in both matrices so the subsets of labels can have the same representation).\pn
+            
+            Also, note that if you choose a subset of edges such that you have leaves, the row for any leaf cannot be
+            zero under any linear combination unless you multiply it by 0. Having said these, is easy to see that
+            the subsets of columns representing forests are independent.\pn
+            
+            Now, lets suppose there is a matrix $C$ such that $M_2[C]$ is isomorphic to $M_3[A]$. Again, lets suppose that 
+            the labels are the same in both matrices. Then, you must have that the subsets of columns $\{1, 4, 5, 6\}$ and 
+            $\{2, 4, 5, 6\}$ are circuts. So, the sum of the columns 4, 5, 6 and 1 must be the zero vector, that is the column 1
+            is equal to the sum of the columns 4, 5 and 6. But the same occurs with the other circuit, the sum of columns
+            4, 5, 6 and 2 must be zero, so the colun 2 is equal to the sum of the columns 4, 5 and 6. Then we have that the
+            columns 1 and 2 must be the equal. That is, the columns 1 and 2 are parallel. Which is a contradiction to what we
+            proved in [\ref{t1:p1}.\ref{t1:p1i}].
+            
         \end{enumerate}
 \end{proof}
