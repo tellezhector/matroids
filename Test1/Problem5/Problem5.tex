@@ -3,22 +3,20 @@
     Suppose $B$ is a basis of a matroid $M$, $f \in E(M)$ and $e \in E(M) \setminus B$.
     Prove that $(B\cup \{e\}) \setminus \{ f \}$ is a basis of $M$ if and only if $f \in C(e, B)$.
 }
+
 \begin{proof}$\,$\pn
-    The \textbf{sufficiency} is not true.\pn
+    \textbf{Sufficiency}\pn
     
-    Counterexample. Let $E = \{1, 2, 3\}$, and let $\I$ be the power set of $\{1, 2\}$ which trivialy
-    satisfies (I1), (I2) and (I3). And $M$ the matroid $(E, \I)$.\pn
+    Suppose that $f \in C(e, B)$. $C(e, B)$ is the only circuit contained in $B \cup \{e\}$ by definition. Then
+    $(B \cup \{e\}) \setminus \{f\}$ does not contain any circuit, that means, it is independent. On the other hand,
+    $e \notin B$ and $f \in B$, then $|(B \cup \{e\}) \setminus \{f\}| = (|B| + 1) - 1 = |B|$, therefore,
+    $(B \cup \{e\}) \setminus \{f\}$ is a basis, as it is an independent set with the size of a basis.\pn
     
-    $B = \{1, 2\}$ is a basis (and the only one) of $M$.
     
-    $f = 2$ is in $E$.
+    \textbf{Necessity}\pn
     
-    $e = 3$ is in $E \setminus B$.
-    
-    $f \in \{1, 2, 3\} = C(e, B)$.
-    
-    But $(B \cup \{ e \}) \setminus \{ f \} = \{1, 3\} \not\in \B$.\pn
-    
-    \textbf{Necessity}
+    We know that $(B \cup \{e\})$ contains only one circuit (and it is $C(e, B)$). If $(B\cup \{e\}) \setminus \{ f \}$ is
+    a basis of $M$, then it can not contain $C(e, B)$. That is, $C(e, B) \subseteq (B \cup \{e\})$, but 
+    $C(e, B) \not\subseteq (B \cup \{e\}) \setminus \{f\}$, then $f$ must be in $C(e, B)$.\pn 
     
 \end{proof}
