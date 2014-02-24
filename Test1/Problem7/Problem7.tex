@@ -1,10 +1,45 @@
 \prob
 {   $\,$\pn
     \begin{enumerate}[label=(\roman*)]
-        \item   Characterize paving matroids in termos of their collection of independent sets and in 
-                terms of their collections of bases.
-        \item   Characterize uniform matroids in terms of their collections of circuits.
+        \item   Characterize paving matroids in terms of their collection of 
+                independent sets and in terms of their collections of bases.
+        
+        \item   Characterize uniform matroids in terms of their collections of 
+                circuits.
     \end{enumerate}
 }
 \begin{proof}
+    $\;$\pn
+    \begin{enumerate}[label=(\roman*)]
+        \item   Let $M$ be a matroid. $\B$ its collection of bases and $\I$ its collection
+                of independent sets.\pn
+                
+                $M$ is a paving matroid if and only if for every $A \subset E(M)$ with
+                $|A| < r(M)$ there exists $B \in \B$ such that $A \subset B$.\pn
+                
+                As $M$ is matroid, by $I2$, this is exactly the same as saying:\pn
+                
+                $M$ is a paving matroid if and only if for every $A \subset E(M)$ with
+                $|A| < r(M)$, $A \in \I$.\pn
+                
+                \begin{proof}
+                    If $M$ is paving, by definition of paving matroid, any $A \in E(M)$ such
+                    that $|A| < r(M)$ then, $A \in \I$ (and therefore, there is some $B \in \B$
+                    such that $A \subset B$).\pn
+                    
+                    If $M$ is a matroid such that for every $A \subset E(M)$ with
+                    $|A| \leq r(M)$ there exists $B \in \B$ such that $A \subset B$ (and 
+                    therefore, $A \in \I$). Then, suppose that $C$ is a circuit of $M$. 
+                    If $|C| < r(M)$, then there would be some $B \in \B$ such that 
+                    $C \subset B$, but then $C \in \I$, which is a contradiction and therefore 
+                    $|C| \geq r(M)$. That is, $M$ is paving.\pn
+                \end{proof}
+                
+        \item   A matroid $M$ is uniform if and only if it has no circuits of size less than 
+               $r(M) + 1$.
+            
+                \begin{proof}
+                    See (\ref{t1:p6})
+                \end{proof}
+    \end{enumerate}
 \end{proof}
