@@ -12,7 +12,22 @@
 }
 
 \begin{proof}
-    Suppose that $\B$ is the collection of bases of a matroid.
+    $\,$\pn
     
-    Then, it satisfies (B1) and.
+    \textbf{Sufficiency}\pn
+        
+    Suppose that $\B$ is the collection of bases of a matroid.\pn
+    
+    Then, it satisfies (B1) and (B2). As $\B$ is a clutter, if $B_1, B_2 \in \B$, then
+    $B_1 = B_2$. Proving that it satisfies $(B3)$.\pn 
+    
+    Now, lets suppose that $B_1, B_2 \in \B$ and $e \in B_1$.\pn 
+    
+    If $e \in B_1 \cap B_2$ then we could choose $f = e \in B_2$ and then 
+    $(B_1 \setminus \{e\}) \cup \{f\} = B_1 \in \B$.\pn
+    
+    If $e \in B_1 \setminus B_2$ then there exists an element $f \in B_2 \setminus B_1$ such that
+    $(B_1 \setminus \{e\}) \cup \{ f \} \in \B$.\pn
+    
+    \textbf{Necessity}
 \end{proof}
