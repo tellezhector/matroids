@@ -30,4 +30,13 @@
     $(B_1 \setminus \{e\}) \cup \{ f \} \in \B$.\pn
     
     \textbf{Necessity}
+    
+    Now lets suppose that $\B$ satisfies (B1), (B2)' and (B3).\pn
+    
+    Let be $B_1, B_2$ in $\B$ and $x \in B_1 \setminus B_2$. By (B2)' we have that there is 
+    an element $y$ in $B_2$ such that $(B_1 \setminus \{x\}) \cup \{y\} \in \B$. If
+    $y \in B_1$, then $(B_1 \setminus \{x\}) \cup \{y\} = B_1 \setminus \{x\} \in \B$, but as
+    $B_1 \setminus \{x\} \subset B_1$, (B3) implies that $B_1 \setminus \{x\} = B_1$, which is a contradition.\
+    So $y \in B_1 \setminus B_2$, proving that $\B$ satisfies (B2) and therefore, is the
+    collection of bases of a matroid.
 \end{proof}
