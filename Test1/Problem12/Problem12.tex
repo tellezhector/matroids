@@ -18,7 +18,7 @@
     Then $T$ must has the property $|T| > |N_G(T)|$ (we will refer to this property as the
     $(*)$-property) and its minimal.\pn
 
-    Then, $T$ is a circuit if and only if it is has the $(*)$-property and its minimal with such condition.
+    Then, $T$ is a circuit if and only if it is has the $(*)$-property and its minimal with such condition. (first approach).
     
     We can learn a little more about these $T$'s. Lets check what happen if the graph induced by $T$ has at least 
     $2$ connected components. Lets call $T_1$ and $T_2$ such that $T_1$ induces one connected component and $T_2 = T \setminus T_1$.
@@ -26,8 +26,20 @@
     As $|T| = |T_1| + |T_2| > |N_G(T_1) | + |N_G(T_2)| = |N_G(T)|$ 
     it must be that either $|T_1| > |N_G(T_1)|$ or $|T_2| > |N_G(T_2)|$, without loss of generality, 
     if the first one is true, then at least $T_1$ is smaller than $T$ and then $T$ is not minimal. 
-    Then the graph induced by $T$ must     be connected.\pn
+    Then the graph induced by $T$ must be connected.\pn
      
+    $T$ is circuit if and only if the graph induced by $T$ (lets call it $G[T]$) is isomorphic to $K_{|T|, |T|-1}$.\pn
+    
+    \textbf{Necessity}\pn
+    Suppose the $G[T]$ is isomorphic to $K_{|T|, |T|-1}$, $T$ is minimal with $(*)$-property, if you remove any vertex from $T$, 
+    its induced graph will be $K_{|T|-1, |T|-1}$ wich has perfect matches, if you remove more you will have a $K_{m,n}$ 
+    with $m < n$ which has $K_{m, m}$ as subgraph.\pn
+    
+
+    \textbf{Sufficiency}\pn
+    Suppose you have a circuit $T$, as $T$ is bipartite and connected, then it must contain a $K_{m, n}$ as subgraph induced by vertices in $T$. 
+    If $n < m$, for one of them the necessity proves that $T$ must be as desired, or then it has a subset that is dependent. If it is not the case
+    and $m \leq n$ for every such graph, then $T$ doesn't have the $(*)$-property.
     %$P$ is switching from $T$ to $\c{A}$. $P$ starts in $\c{A}$, then you can 
     %enumerate the edges of $P$ starting from a start edge and giving the next number to the only edge that is connected to the already numbered
     %edges, if you take the odd edges, as $P$ is spaning, then you can cover all of $T$, which is a contradiction because $T$ had
