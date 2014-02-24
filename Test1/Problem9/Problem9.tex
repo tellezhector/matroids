@@ -8,8 +8,47 @@
         \item $r(E(M) \setminus \{e\}) = r(E(M)) - 1$.
         \item $E(M) \setminus \{e\}$ is a flat.
         \item $E(M) \setminus \{e\}$ is a hyperplane.
-        \item If $I$ is an independent set, then so is $I \subset e$.
+        \item If $I$ is an independent set, then so is $I \cup \{ e \}$.
     \end{enumerate}
 }
 \begin{proof}
+    $\,$\pn
+    \textbf{[(a) $\Rightarrow$ (b)]} \pn
+        Suppose there is a circuit $C$ such that $e \in C$, then $C \setminus \{ e \} \in \I(M)$, then
+        there must be $B \in \B$ such that $C \setminus \{ e \} \subseteq B$, but $e \not\in B$, otherwise
+        $C \subset B$. But this contradicts that $e$ is in every basis and therefor there is not such 
+        circuit $C$.\pn
+        
+    \textbf{[(b) $\Rightarrow$ (c)]} \pn
+        Let $X \subseteq E(M)$ such that $e \in cl(X)$. Suppose that $e \notin X$ and let $B_X$ be a basis of $X$.
+        we have that $x \in cl(X) = cl(B_X)$, then $cl(B_X) = cl(B_X \cup \{ e \})$, which means that
+        $r(B_X \cup \{ e \}) = r(B_X) = |B_X| < |B_X \cup \{ e \}|$, and therefore $B_X \cup \{ e \}$ is a dependent set,
+        and it must contain a circuit $C$, as $C$ can not be subset of $B_X$ (because $B_X$ is independent) then $e \in C$,
+        which is a contradiction to (b).\pn
+
+    
+    \textbf{[(c) $\Rightarrow$ (d)]} \pn
+        As $E(M) \setminus \{e\}$ is missing only one element of $E(M)$, then $r(E(M) \setminus \{e\}) \geq r(E(M)) - 1$.
+        If $r(E(M) \setminus \{e\}) = r(E(M))$ then $cl(E(M) \setminus \{e\}) = E(M)$ and $e \in E(M)$ but $e \notin E(M) \setminus \{e\}$,
+        which contradicts (c).\pn
+        
+    \textbf{[(d) $\Rightarrow$ (e)]} \pn
+        By definition of closure, $E(M) \setminus \{ e \} \subseteq cl(E(M) \setminus \{ e \})$. And $E(M) \setminus \{ e \}$ is contained in only
+        two subsets of $E(M)$, there are $E(M)$ itself and $E(M) \setminus \{ e \}$. So $cl(E(M) \setminus \{ e \}) = E(M) \setminus \{ e \}$ or
+        $cl(E(M) \setminus \{ e \}) = E(M)$. If the second occurs, then $r(E(M) \setminus \{ e \}) = r(E(M))$, which contradicts (d), and therefore
+        $cl(E(M) \setminus \{ e \}) = E(M) \setminus \{ e \}$, which means that $E(M) \setminus \{ e \}$ is flat.\pn
+        
+    \textbf{[(e) $\Rightarrow$ (f)]} \pn
+        As $E(M) \setminus \{ e \}$ is flat, then $r(E(M) \setminus \{ e \}) < r(M)$, but $E(M) \setminus \{ e \}$ is missing only $e$, so 
+        $r(E(M) \setminus \{ e \}) = r(M) - 1$ and then $E(M) \setminus \{ e \}$ is an hyperplane.\pn
+        
+    \textbf{[(f) $\Rightarrow$ (g)]} \pn
+        Let $I \in \I(M)$ such that $e \notin I$ and let $B \in \I$ be a basis for $E(M) \setminus \{ e \}$ containing $I$. 
+        As $|B| = r(B) = r(E(M) \setminus \{ e \}) = r(M) - 1$, then $r(B \cup \{ e \}) = r(M) = |B| + |\{ e \}| = |B \cup \{ e \}|$ and therefore
+        $B \cup \{e\}$ is a basis, and $I \cup \{ e \} \subseteq B \cup \{ e \}$ so $I \cup \{e\}$ is independent.
+
+    \textbf{[(g) $\Rightarrow$ (a)]} \pn
+        Let $B \in \B(M)$, as $B \cup \{ e \} \in \I(M)$ and $B$ is maximal by contention over independent sets, so there must be the case that
+        $B \cup  \{ e \} = B$.
+        
 \end{proof}
