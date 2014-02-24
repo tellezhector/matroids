@@ -10,7 +10,7 @@
 \begin{proof}
     \begin{enumerate}[label=(\roman*)]
         \item   Let $U_{m, n}$ be a uniform matroid of rank $m$ over $n$ elements,  define $\c{A} = (A_j | j \in [1, m])$ 
-                and $A_j = E(U_{m,n})$ and $S = E(U_{m,n})$. Then, for every subset $J \subset [1, m]$ you can take $T = J$ and the biyection
+                and $A_j = E(U_{m,n})$ and $S = E(U_{m,n})$. Then, for every subset $J \subset [1, m]$ you can take $T = J$ and the bijection
                 $\psi : J \rightarrow T$ such that $\psi(j) = j$, proving that every $J$ is an indepentend set in the transversal
                 matroid just defined. Just as every $J$ is independent in $U_{m, n}$. By the definition of $\c{A}$, there cannot be
                 independent sets of size larger than $m$. Just as in $U_{m, n}$. These two observation determine $U_{m, n}$ proving that
@@ -20,7 +20,15 @@
                 (see \ref{t1:p6}), if they were triangles of a graph, then the edges 3 and 4 must be parallel. But \{3, 4\} is independent in $U_\{2, 4\}$,
                 so $U_{2, 4}$ is not graphic.\pn
 
-        \item   Take the uniform matroid $U_{2, 3}$ again, and remove the set $\{1, 2\}$ from the collection of independent sets, what you
-                get is a paving matroid that is not uniform. Now, we have only the independent sets $\{1, 3\}, \{2, 3\}, \{1\}, \{2\}, \{3\}, \emptyset$
+        \item   Take the uniform matroid $U_{2, 3}$ again, and remove the set $\{1, 3\}$ and $\{2, 3\}$ from the collection of independent sets, what you
+                get is a paving matroid that is not uniform. Now, we have only the independent sets $\{1, 2\}$, $\{1\}$, $\{2\}$, $\{3\}$, $\emptyset$.
+                Lets suppose that this is a transversal matroid, as the largest independent set has two elements, then we can assume that $\c\{A\}$ has only 
+                two elements, lets call them $a$ and $b$. As $\{1, 2\}$ is independent without loss of generality, there would be a relation $(a, 1), (b, 2)$ 
+                and there is someone linked to $3$, lets think it is $(a, 3)$, then we can have the matching $(b,2), (a,3)$, which lead us to a independent set
+                that was not supposed to be in our matroid.\pn
+                
+                The same will happen no matter how you try to pair $a, b$ with $1, 2, 3$ in a way that let you have the matching given by our collection
+                of independent sets.\pn
+                
     \end{enumerate}
 \end{proof}
