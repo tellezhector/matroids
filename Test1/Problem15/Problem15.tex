@@ -4,4 +4,12 @@
     Prove that $M$ has a unique basis of maximum weight.
 }
 \begin{proof}
+    Let $B$ be a maximum-weight basis found using greedy. Suppose that there is another basis $B'$ with maximum-weight also and
+    suppose that they are different.\pn
+    
+    Let $e \in B' \setminus B$ of minimum-weight (it exists because $\omega$ is one-to-one), and then, there exists $f \in B \setminus B'$ such that
+    $(B' \setminus \{e\}) \cup  \{f\}$ is basis. We can choose such $f$ of maximum weight. If $\omega(e) < \omega(f)$ then we have increased the 
+    weight of $B'$, which is a contradiction. If $\omega(f) < \omega(e)$ we can change the roles of $B$ and $B'$ and get the same contradiction.\pn
+    
+    So, there is no other basis $B'$ with maximum-weight and different from $B$.
 \end{proof}
