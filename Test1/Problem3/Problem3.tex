@@ -3,3 +3,58 @@
     Let $M_1$ and $M_2$ be matroids on a set $E$. Give an example to show that
     $(E, \I(M_1) \cap \I(M_2))$ need not be a matroid.
 }
+
+\begin{proof}
+    Let $E = \{a, b, c\}$.
+    
+    Let $\I(M_1) = \{ \{a, b\}, \{a, c\}, \{a\}, \{b\}, \{c\}, \emptyset \}$
+    Lets check that this is a matroid. It hass the empty set, given any set, any of its subests is independent.
+    To see that the independence augmentation axiom (if $I, J \in \I$ and $|J| < |I|$ then there exists
+    $x \in I \setminus J$ such that $J \cup \{x\}  \in \I$), I will give you a table, where the first row is for the
+    set $I$, the second for $J$ and the third one for $x$.\pn
+    
+    \begin{center}
+        \begin{tabular}{ | p{1cm} | p{1cm} | p{1cm} |}
+            \hline $I$          & $J$           &   $x$ \\ \hline
+            \hline $\{a, b\}$   & $\{a\}$       &  b    \\
+            \hline $\{a, b\}$   & $\{b\}$       &  a    \\
+            \hline $\{a, b\}$   & $\{c\}$       &  a    \\
+            \hline $\{a, b\}$   & $\emptyset$   &  a    \\
+            \hline $\{a, c\}$   & $\{a\}$       &  c    \\
+            \hline $\{a, c\}$   & $\{b\}$       &  a    \\
+            \hline $\{a, c\}$   & $\{c\}$       &  a    \\
+            \hline $\{a, c\}$   & $\emptyset$   &  a    \\
+            \hline $\{a\}$      & $\emptyset$   &  a    \\
+            \hline $\{b\}$      & $\emptyset$   &  b    \\
+            \hline $\{c\}$      & $\emptyset$   &  c    \\ \hline
+        \end{tabular}    
+    \end{center}
+    
+    So $(E, \I(M_1))$ is a matroid.\pn
+        
+    Now, let $\I(M_2) = \{ \{a, b\}, \{b, c\}, \{a\}, \{b\}, \{c\}, \emptyset \}$, to see that $(E, \I(M_2))$ 
+    the first two axioms can be justified just as above, and just below is the table to check the augmentation axiom.\pn
+    
+   \begin{center}
+        \begin{tabular}{ | p{1cm} | p{1cm} | p{1cm} |}
+            \hline $I$          & $J$           &   $x$ \\ \hline
+            \hline $\{a, b\}$   & $\{a\}$       &  b    \\
+            \hline $\{a, b\}$   & $\{b\}$       &  a    \\
+            \hline $\{a, b\}$   & $\{c\}$       &  b    \\
+            \hline $\{a, b\}$   & $\emptyset$   &  a    \\
+            \hline $\{b, c\}$   & $\{a\}$       &  b    \\
+            \hline $\{b, c\}$   & $\{b\}$       &  c    \\
+            \hline $\{b, c\}$   & $\{c\}$       &  b    \\
+            \hline $\{b, c\}$   & $\emptyset$   &  b    \\
+            \hline $\{a\}$      & $\emptyset$   &  a    \\
+            \hline $\{b\}$      & $\emptyset$   &  b    \\
+            \hline $\{c\}$      & $\emptyset$   &  c    \\ \hline
+        \end{tabular}    
+    \end{center}
+    
+    So $(E, \I(M_2))$ is also a matroid.\pn
+    
+    Then $\I' = \I(M_1) \cap \I(M_2) = \{ \{a, b\}, \{a\}, \{b\}, \{c\}, \emptyset \}$ cannot be an independet set for $E$. 
+    It satisfies I1 and I2, but not I3 since $\{a, b\}, \{c\} \in \I'$, and $|\{c\}| < |\{a, b\}|$ but 
+    $\{c\} \cup \{a\} \not\in \I'$ and $\{c\} \cup \{b\} \not\in \I'$.
+\end{proof}
