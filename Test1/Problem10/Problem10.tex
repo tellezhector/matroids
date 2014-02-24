@@ -8,5 +8,19 @@
     \end{enumerate}
 }
 \begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+        \item   Let $U_{m, n}$ be a uniform matroid of rank $m$ over $n$ elements,  define $\c{A} = (A_j | j \in [1, m])$ 
+                and $A_j = E(U_{m,n})$ and $S = E(U_{m,n})$. Then, for every subset $J \subset [1, m]$ you can take $T = J$ and the biyection
+                $\psi : J \rightarrow T$ such that $\psi(j) = j$, proving that every $J$ is an indepentend set in the transversal
+                matroid just defined. Just as every $J$ is independent in $U_{m, n}$. By the definition of $\c{A}$, there cannot be
+                independent sets of size larger than $m$. Just as in $U_{m, n}$. These two observation determine $U_{m, n}$ proving that
+                $U_{m, n}$ can be seen as a transversal matroid.\pn
+                
+        \item   Let $U_{2, 4}$ be a uniform matroid, as we proved above, $U_{m, n}$ is transversal. $\{1, 2, 3\}$ and $\{1, 2, 4\}$ are circuits
+                (see \ref{t1:p6}), if they were triangles of a graph, then the edges 3 and 4 must be parallel. But \{3, 4\} is independent in $U_\{2, 4\}$,
+                so $U_{2, 4}$ is not graphic.\pn
 
+        \item   Take the uniform matroid $U_{2, 3}$ again, and remove the set $\{1, 2\}$ from the collection of independent sets, what you
+                get is a paving matroid that is not uniform. Now, we have only the independent sets $\{1, 3\}, \{2, 3\}, \{1\}, \{2\}, \{3\}, \emptyset$
+    \end{enumerate}
 \end{proof}
