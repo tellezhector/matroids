@@ -3,4 +3,16 @@
     Show that a subset $X$ of a matroid is a basis if and only if $X$ is both independent and spanning.
 }
 \begin{proof}
+    $\,$\pn
+    \textbf{Sufficiency}\pn
+
+    If $X$ is a basis of a matroid $M$, then by definition of basis, it is independent. Also, as $X$ is
+    basis, then $r(X) = r(X \cup x)$ for any $x \in E(M)$ and, therefore, $cl(X) = E(M)$, that is, $X$ is spanning.\pn
+    
+    \textbf{Necessity}\pn
+    
+    Suppose that $X$ is both independent and spanning. As $X$ is spanning, then $r(X) = r(M)$, that is, for any $B \in \B(M)$,  
+    $|X| \geq r(X) = r(B) = |B|$. On the other hand, $X \in \I(M)$ so, for any $B \in \B(M)$, $|X| \leq |B|$. We have then that
+    $|B| \leq |X| \leq |B|$, that is $|B| = |X|$ for any $\B(M)$ and therefore, $X$ is a basis.
+    
 \end{proof}
