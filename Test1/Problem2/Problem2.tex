@@ -1,6 +1,32 @@
 \prob
 {
-    Let $M_1$ and $M_2$ be matroids on disjoint sets $E_1$ and $E_2$. Let $E = E_1 \cup E_2$ and 
-    $\c{I} = \{ I_1 \cup I_2 : I_1 \in \c{I}(M_1), I_2 \in \c{I}(M_2)\}$. Prove that $(E, \c{I})$ is a
+    Let $M_1$ and $M_2$ be matroids on disjoint sets $E_1$ and $E_2$ and with independent sets
+    $\I_1$ and $\I_2$ respectively. Let $E = E_1 \cup E_2$ and 
+    $\I = \{ I_1 \cup I_2 : I_1 \in \I_1, I_2 \in \I_2\}$. Prove that $(E, \I)$ is a
     matroid.
 }
+
+\begin{proof}
+    Lets see that $(E, \c{I})$ satisfies $I1, I2$ and $I3$.\pn
+    
+    
+    \begin{enumerate}
+        \item[I1)]
+            $\emptyset \in \I$. This is clear, $\emptyset \in \I(M_1)$ and $\emptyset \in \I(M_1)$, so 
+            $\emptyset = \emptyset \cup \emptyset \in \I$.
+        \item[I2)]
+            If $I \in \I$, $J \subset I$ then $J \in \I$. $I \in \I$ means that there are $I_1 \in \I_1$
+            and $I_2 \in \I_2$ such that $I = I_1 \cup I_2$. Given that $J \subset I$ it is clear that
+            $J = J \cap I = J \cap (I_1 \cup I_2) = (J \cap I_1) \cup (J \cap I_2)$. We have that $(J \cap I_1) 
+            \subset I_1$ and $(J \cap I_2) \subset I_2$, given that $M_1$ and $M_2$
+            are matroids, then $(J \cap I_1) \in \I_1$ and $(J \cap I_2) \in \I_2$. Then $J = (J \cap I_1) \cup (J \cap I_2) \in \I$.
+        \item[I3)] 
+            If $I, J \in \I$, $\|J\| < \|I\|$ then there exists $x \in I \setminus J$ such that $J \cup \{x\} \in \I$.
+            By hypotesis, there are $I_1, J_1 \in \I_1$ and $I_2, J_2 \in \I_2$ such that $I = I_1 \cup I_2$ and $J = J_1 \cup J_2$.
+            Then $\|J\| = \|J_1\| + \|J_2\| <  \|I_1\| + \|I_2\| = \|I\|$. Then there must be that $\|J_1\| < \|I_1\|$ or
+            that $\|J_2\| < \|I_2\|$. Withtout loss of generality, lets say that $\|J_1\| < \|I_1\|$, as $M_1$ is a matroid,
+            then, there exists $x \in I_1 \setminus J_1$ such that $J_1 \cup \{x\} \in \I_1$. Then, $x \in I$ and 
+            $J \cup \{x\} = (J_1 \cup \{ x \}) \cup J_2 \in \I$. And we are done.
+            
+    \end{enumerate}
+\end{proof}
