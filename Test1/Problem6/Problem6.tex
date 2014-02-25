@@ -1,22 +1,9 @@
 \prob
 {
-    Prove that a matroid $M$ is uniform if and only if it has no circuits 
-    of size less than $r(M) + 1$.
+    Prove that a matroid $M$ is uniform if and only if it has no circuits of size less than
+    $r(M) + 1$.
 }
 \begin{proof}
-    $\,$\pn
-    \textbf{Sufficiency}\pn
+	Suppose that $M$ is a uniform matroid $U_{n, m}$
 
-	Suppose that $M$ is a uniform matroid $U_{m, n}$, then $r(M) = m$ by definition.
-    Moreover, any $A \subset E(M)$ such that $|A| < m$ will be subset of some basis and
-    therefore independent. Then if there is any circuit $C$, it must have size greater
-    than $m$, that is $r(C) \geq m + 1 = r(M) + 1$.\pn
-
-    \textbf{Necessity}\pn
-    
-    Suppose now that $M$ is such that it has no circuits of size less than $r(M) + 1$.
-    Then, for any $A \subset E(M)$ with $|A| \leq r(M)$ it must be independent, if not,
-    then $A$ should contain a circuit, but any circuit has size at least $r(M) + 1$.\pn
-    
-    Then $M$ must be isomorphic to an uniform matroid $U_{r(M), |E(M)|}$.
 \end{proof}
