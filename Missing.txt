@@ -1,0 +1,3 @@
+Circuitos de los transversales. (2.12)
+Latice que es semimodular (2.13)
+Paving no gráfico (2.10.iii)
