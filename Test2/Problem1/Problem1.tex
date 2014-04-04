@@ -1,3 +1,45 @@
-\prob{}
-\begin{proof}
+\prob{
+    Find each of the following:
+    \begin{enumerate}[label=(\roman*)]
+        \item all self-dual uniform matroids;
+        \item all identically self-duall uniform matroids;
+        \item all self-dual graphic matroids on six or fewer elements;
+        \item all identically self-dual graphic matroids on six or fewer elements;
+        \item an infinite family of simple graphic self-dual matroids.
+    \end{enumerate}
+}
+\begin{proof}$\,$\pn
+    \begin{enumerate}[label=(\roman*)]
+        \item all self-dual uniform matroids;
+            Let $U_{n,m}$ be an uniform matroid.\pn
+            
+            Lets asume that it is self-dual. As
+            any basis $B$ for $U_{n,m}$ has size $n$, if it is going to be self-dual,
+            then its complement must have size $n$ as well. This means that $m = 2n$.\pn
+            
+            Now lets suppose that $m = 2n$. So, any subset of size $n$ is a basis for $U_{n,m}$,
+            but it is also true that any subset of size $n$ is the complement of another subset
+            of size $n$ and then, any basis is the complement of another basis. Then $U_{n,m}$ is
+            not only self-dual, but also identically self-dual.
+        \item all identically self-dual uniform matroids;
+            Just as we saw above, if an uniform matroid is self-dual, then it is identically self-dual, and
+            an uniform matroid $U_{n,m}$ is self-dual if and only if $m = 2n$.
+        \item all self-dual graphic matroids on six or fewer elements;
+            Lets asume that the graphs are connected. For not connected graphs the following conditions
+            must hold for each of the connected compontents.\pn
+            
+            Any graph with no edges.\pn
+            
+            A graph with two vertices and two parallel edges.\pn
+            
+            Any graph with three vertices and four edges that such that any edge has at most
+            a parallel one.\pn
+            
+            
+        \item all identically self-dual graphic matroids on six or fewer elements;
+            Any graph on six or fewer elements obtained from a forest adding a parallel edge to each edge in the forest.
+            
+        \item an infinite family of simple graphic self-dual matroids.
+            Any wheel.
+    \end{enumerate}
 \end{proof}
