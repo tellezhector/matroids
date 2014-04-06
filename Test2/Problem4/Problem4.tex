@@ -1,11 +1,29 @@
 \prob
 {
     Let $B$ be a basis of a matroid $M$ and $B^*$ be $E(M) - B$. If $e\in B$, let $C^*(e, B^*)$ denote the fundamental cocircuit
-    of $e$ with respect to the cobasis $B^*$ of $M$, that is, $C^*(e, B^*) = C_{M^*}$.
+    of $e$ with respect to the cobasis $B^*$ of $M$, that is, $C^*(e, B^*) = C_{M^*}(e, B^*)$.
     \begin{enumerate}[label=(\roman*)]
         \item Show that $C^*(e,B^*)$ is the unique cocircuit that is disjoint from $B - e$.
         \item If $f \in B^*$, prove that $f \in C^*(e,B^*)$ if and only if $e \in C(f,B)$.
     \end{enumerate}
 }
 \begin{proof}
+    $\,$\pn
+    \begin{enumerate}
+        \item 
+            $C^*(e, B^*)$ is the only cocircuit contained in $B^* \cup e$, then any other circvuit must 
+            intersect the complement of $B^* \cup e$, but the complement of $B^* \cup e$ is $B - e$. Then
+            any other cocircuit must intersect $B - e$
+        \item             
+            Suppose $e \in C(f, B)$. Now, $B \setminus e \cup f$ must be a basis, it has the same size
+            as $B$ and $B \cup f$ has an unique circuit which is $C(f, B)$ and which contains $f$, 
+            so $B \setminus e \cup  f$ cannot contain a circuit and then it is independent with
+            maximum size, that is, $B \setminus e \cup  f$ is a basis.\pn
+            
+            Then, its complement must be a cobasis, but its complement is $B^* \setminus f \cup e$, we know that
+            $B^* \setminus f \cup e \cup f = B^* \cup e$ has an unique cocircuit and then it must contain $f$.\pn
+            
+            We have already proved that $e \in C(f, B)$ implies $f \in C^*(e, B)$, the proof for the sufficiency is
+            completely analog.
+    \end{enumerate}
 \end{proof}
