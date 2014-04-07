@@ -42,6 +42,8 @@ _ReSharper*/
 *.toc
 *.dvi
 *.out
+*.bbl
+*.blg
 
 !Matroids.pdf
 !matroides11.pdf
