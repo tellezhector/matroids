@@ -4,4 +4,28 @@
     $\{e\}$ or $\{e, f\}$ is a cocircuit.
 }
 \begin{proof}
+    $\,$\pn
+    \textbf{Sufficiency}\pn
+        Suppose every circuit containing $e$ also contains $f$.\pn 
+        
+        If every basis contains $e$, then, no cobasis contains $e$, which means $\{e\}$ is a
+        cocircuit.\pn
+        
+        Suppose then that there is a basis $B$ such that $e \notin B$. As $C(e, B)$ is a circuit that contains $e$, then
+        $f \in B$. That is, any basis that doesn't contain $e$, contains $f$. That is, any cobasis that contains $e$, doesn't 
+        contain $f$.\pn 
+        
+        Note that $B \setminus \{f\} \cup \{e\}$ is a basis given that it has the right size to be a basis and
+        it is obtained from $B \cup \{e\}$ getting rid of the only circuit that it contains (that is, it is independent). Then, there
+        is a basis that doesn't contains $e$ and then $\{e\}$ is coindependent, and there is also a basis that doesn't contain $f$ and then
+        $\{f\}$ is also coindependent.\pn
+        
+        Now suppose there is a basis $B'$ such that $f \notin B'$. If $e \notin B'$, then $C(e, B')$ is a circuit that contains
+        $e$ but not $f$ whitch contradicts our hyphothesis. Then any basis that doesn't contain $f$, contains $e$. That is,
+        any cobasis containg $f$, doesn't contain $e$.\pn
+        
+        Then $\{e, f\}$ is a subset that is not contained in any cobasis, then it is codependent but any of its subsets is coindependent.
+        Then it is a cocircuit as we wished to show.
+        
+    \textbf{Necessity}\pn
 \end{proof}
