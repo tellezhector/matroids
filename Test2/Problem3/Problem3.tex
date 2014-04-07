@@ -25,7 +25,25 @@
         any cobasis containg $f$, doesn't contain $e$.\pn
         
         Then $\{e, f\}$ is a subset that is not contained in any cobasis, then it is codependent but any of its subsets is coindependent.
-        Then it is a cocircuit as we wished to show.
+        Then it is a cocircuit as we wished to show.\pn
         
     \textbf{Necessity}\pn
+        Suppose $\{e\}$ is a cocircuit. Then, again by Proposition 2.1.6 in~\cite{Oxley}, $E(M) \setminus \{e\}$ is an hyperplane, and then
+        $e$ is contained in every basis, then $e$ is in no circuits (by [\ref{t1:p9}]). Then it is true that every circuit containing $e$
+        also contains $f$, since there are not circuits containing $e$.\pn
+        
+        Now suppose that $\{e, f\}$ is a cocircuit. Then, again by Proposition 2.1.6 in~\cite{Oxley}, $H = E(M) \setminus \{e, f\}$ is an
+        hyperplane, so any basis must contain $e$ or $f$.\pn
+        
+        Let $C$ be a circuit such that $e \in C$. Then $C \setminus \{e\}$ is independent. Let $B$ be a basis such that 
+        $C \setminus \{e\} \subset B$. As $B$ is basis and doesn't contain $e$, then $f \in B$. Notice that $C(e, B) = C$\pn 
+        
+        Now, $B^* = E(M) \setminus B$ is a cobasis that contains $e$ but doesn't contain $f$, then $C*(f, B^*) = \{e, f\}$ is be the
+        only cocircuit in $B^* \cup \{f\}$, that means that $B^* \cup \{f\} \setminus \{e\}$ is a coindependent of maximum size, that is
+        a cobasis. Taking its complement we will get a basis, and it is
+        \begin{align}
+                E(M) \setminus (B^* \cup \{f\} \setminus \{e\}) &= B \cup \{e\} \setminus \{ f \}.
+        \end{align}
+        
+        Which means that $f \in C$.
 \end{proof}
