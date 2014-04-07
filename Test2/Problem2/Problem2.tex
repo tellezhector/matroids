@@ -2,4 +2,26 @@
     Let $M$ be a matroid. Show that $M^*$ has two disjoint circuits if and only if $M$ has two hyperplanes whose union is $E(M)$.
 }
 \begin{proof}
+    $\,$\pn
+    \textbf{Sufficiency}\pn
+    
+    Let $C^*$ and $C'^*$ be two disjoint circuits in $M^*$. From Proposition 2.1.6 in~\cite{Oxley} we know that 
+    $C = E(M) \setminus C^*$ and $C' = E(M) \setminus C'^*$ are hyperplanes in $M$. Moreover, as $C^*$ and $C'^*$ are disjoint 
+    disjoint, then $C^* \subset C'$ and $C'^* \subset C$. Then 
+    \begin{align}
+        C \cup C'   &=  (C \cup C'^*) \cup (C' \cup C^*)                                    \\
+                    &\comment{we have added nothing new to each subset}                     \\
+                    &=  (E(M) \setminus C^*) \cup C'^* \cup  (E(M) \setminus C'^*) \cup C^* \\
+                    &\comment{reordering terms}                                             \\
+                    &=  (E(M) \setminus C^*) \cup C^* \cup  (E(M) \setminus C'^*) \cup C'^* \\
+                    &=  E(M) \cup  E(M)                                                     \\
+                    &=  E(M).
+    \end{align}
+    
+    \textbf{Necessity}\pn
+    Let $H$ and $H'$ be two hyperplanes such that $H \cup H' = E(M)$. Againg, from Proposition 2.1.6 in~\cite{Oxley} we know that
+    $H^* = E(M) \setminus H$ and $H'^* = E(M) \setminus H'$ are cocircuits. Suppose there exists $x \in H^* \cap H'^*$, that is
+    $x \in H^*$ and $x \in H'^*$. But $x \in H^*$ means $x \not\in H$ and $x \in H'^*$ means $x\not\in H'$, 
+    then $x \notin H \cup H' = E(M)$ which is a contradiction. Then there is not such $x$ and $H^* \cap H'^*$ are cocircuits such that
+    $H^* \cap H'^* = \emptyset$.
 \end{proof}
