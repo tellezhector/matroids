@@ -25,17 +25,58 @@
             Just as we saw above, if an uniform matroid is self-dual, then it is identically self-dual, and
             an uniform matroid $U_{n,m}$ is self-dual if and only if $m = 2n$.
         \item 
-            Lets asume that the graphs are connected. For not connected graphs the following conditions
-            must hold for each of the connected compontents.\pn
+            It is clear that if a matroid is to be self-dual, then its size must be two times
+            the size of any of its basis (any forest that is not contained in any other forest). 
+            This means that there are only self-dual graphic matroids with an even number of edges. \pn
             
-            Any graph with no edges.\pn
+            -2 edges:\pn
             
-            A graph with two vertices and two parallel edges.\pn
+            There are only 4 posibilities.\pn 
             
-            Any graph with three vertices and four edges that such that any edge has at most
-            a parallel one.\pn
+            Two disjoint no-loop edges. But two disjoint edges form a forest of size two, but in this case we 
+            are loking for forests of size one.\pn
+            
+            Two loops. Two loops doesn't contain any non empty forest at all, so it will not work.\pn
+            
+            One no-loop edge and one loop. In this case, we have only a tree of size one. That gives us a basis of size one
+            and its complement give us a cobasis of size one. As the tree is a set that is contained in all the basis,
+            and it is minimal non empty with such property it is a coloop. Then the dual matroid consits of a cobasis and
+            a coloop, both of size one and disjoint. Then it is clear thet there is an isomorphism, one that sends the
+            no-loop edge to the only edge in the coloop and the loop to the only edge in the cobasis.\pn
+            
+            The last posibility which is two parallel edges, has two basis of size one, and it is easy to see that this 
+            matroid is not only self-dual but also indentically self-dual.\pn
+          
+            -4 edges:\pn
+            
+            Any combination of two of the 2-edges self-dual graphic matroids will do the trick. This gives us
+            three possible combinations. And only one of them will be identically self-dual (the one composed of two identically
+            self dual matroids).
+            
+            There is only another one and it is the graph that results from a triangle adding a parallel edge to one of its edges.
+            An isomorphism would be sending the simple edges to the parallel edges and the parallel edges to the simple edges.
+            The two simple edges form a set that intersects any of the basis of the matroid, so it is a cocircuit. 
+            The proposed isomorphism send that cocircuit to a circuit in the original matroid. 
+            The two parallel edges along with any of the simple edges form another set that intersects any of the basis of the original
+            matroid, so it is another cocircuit in the dual matroid. Those edges are sent to a triangle in the original matroid.
+            There are two of these cocircuits and each one is sent two one of the two possible triangles in the original matroid.
+            Any basis formed for a simple edge and one of the two parallel edges has as complement the other simple edge and the other
+            parallel edge, and under the proposed isomorphism any of such basis are sent to other of the same type.
+            The only other basis that is left is the one that consits of the two simple edges, and they are sent to the pair of parallel
+            edges, which is independent in the dual matroid. We have proved so far that this isomorphism sends any of the 
+            basis in the original matroid to a basis in the dual matroid and any cocircuit to  a circuit in the original matroid. Then such isomorphism
+            is a matroid isomorphism between the graphic matroid and its dual.\pn
+            
+            Lemma 2.3.7 from~\cite{Oxley} stays that if $G^*$ is a geometric dual of the planar graph $G$, then
+            $M(G^*) \cong M^*(G)$. In particular for self-dual matroids we will have that $M(G^*) \cong M^*(G) \cong M(G)$.
+            
+            From now on we will use this fact to look for the remaining self-dual matroids. As the maximum size of these matroids
+            is $6$ and $K_4$ is a complete planar graph with 6 edges, then every one of the matroids will have a planar representation. And the
+            previously mentioned lemma will let us work with graph representations instead of a complicated structure of subsets and its 
+            intersections.\pn
+            
+            -6 edges:\pn
             MISSING!
-            
         \item 
             Any graph on six or fewer elements obtained from a forest adding a parallel edge to each edge in the forest.
             MISSING!
