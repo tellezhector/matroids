@@ -1,4 +1,4 @@
-function void = brute_force(A, T, r)
+function void = busca_bases_iguales(A, T, r)
 	n = size(A, 2);
 	P = perms([1:n]);
 	
