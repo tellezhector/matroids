@@ -24,6 +24,16 @@
 \begin{proof}$\,$\pn
     \begin{enumerate}[label=(\roman*)]
         \item 
+        
+            Theorem 2.2.8 from~\cite{Oxley} sates that if a linear matroid is expresed as $[I_n | D]$,
+            then its dual matroid can be represented with the matrix $[-D^T | I_r]$.\pn
+            
+            As multiplying columns by $-1$ doesn't change dependency/independency conditions. The dual matroid can be represented
+            as $[D^T | I_r]$.\pn
+            
+            For both, $T_8$ and $R_8$, we have that $n = 4$, $r = 4$, and $D = D^T$. Then, in both cases, 
+            $[D^T | I_r] = [D^T | I_n] = [D | I_n]$. And with this representation is clear how we would build an
+            isomorphism from $T_8$ to $T_8^*$ and from $R_8$ to $R_8^*$.
         \item
         \item
         \item
