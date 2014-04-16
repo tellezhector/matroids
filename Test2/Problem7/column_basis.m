@@ -6,7 +6,7 @@ function Ind = column_basis(M, r)
 		subset = C(i, :);
 		N = M(:, subset);
 		c = det(N);
-		if(c != 0)
+		if(mod(c, 3) != 0)
 			Ind = [Ind; subset];
 		endif
 	endfor

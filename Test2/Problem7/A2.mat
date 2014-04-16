@@ -1,0 +1,11 @@
+# Created by Octave 3.4.3, Wed Apr 16 06:21:55 2014 Central Daylight Time (Mexico) <unknown@unknown>
+# name: A2
+# type: matrix
+# rows: 4
+# columns: 8
+ 1 0 0 0 0 1 1 -1
+ 0 1 0 0 1 0 1 -1
+ 0 0 1 0 1 1 0 -1
+ 0 0 0 1 1 1 1 1
+
+
