@@ -1,11 +1,8 @@
 Circuitos de los transversales. (2.12)
 Latice que es semimodular (2.13)
 Paving no gráfico (2.10.iii)
-1 2.1 1 (1/2)
-6 2.2 4 
-7 2.2 8 (Escribir)
-8 2.3 1 (Escribir)
-9 2.3 2 (Dibujar)
+1 2.1 1 (Escribir 1/4)
+7 2.2 8 (Escribir 5/6) 
 10 2.3 6 (Dibujar)
 11 2.3 10 (2/3)
 12 2.4 3
