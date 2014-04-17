@@ -46,7 +46,48 @@
             
             All the columns of $I_4$ form a basis. Then all the columns of $D$ form a cobasis, but such cobasis is
             dependent, if you sum up all of their columns you will get the zero vector.\pn
-        
+            
+            Now lets show that $R_8$ is identically self-dual by showing that every cobasis is a basis. 
+            For this, lets clasify the subsets of columns with cardinality 4 by how they intersect $I_4$.\pn
+            
+            There are three main types that intersect the columns in $I_4$
+                \begin{enumerate}
+                    \item \textbf{four columns from $I_4$.}
+                        There is only one of these, and its complement (the columns from $D$) is also independent, its determinant
+                        is $-16$ and $-16 \equiv 2 \mod 3$.
+                        
+                        So, in this case, every cobasis is basis.
+                    \item \textbf{trhee columns from $I_4$ and one from $D$.}
+                        Without loss of generality, lets say that the 3 columns from $I_4$ are the first three. If it is not the
+                        case we can always exchange rows to make them look like the first three. Here are two subcases. The column
+                        from $D$ is $8$ or it is $5$. If it is among $5, 6, 7$ we can always exchange rows to make them look
+                        as if the column chosen from $D$ is 5.\pn
+                        
+                        If the column from $D$ is 8, the determinant of the columns $\{1, 2, 3, 8\}$ is -1, and the determinant of the complement
+                        $\{4, 5, 6, 7\}$ is -4 and $-4 \equiv -1 \mod 3$.\pn
+                        
+                        If the column from $D$ is 5, the determinant of the columns $\{1, 2, 3, 5\}$ is 1, and the determinant of the complement
+                        $\{4, 6, 7, 8\}$ is -4 and $-4 \equiv -1 \mod 3$.\pn
+                        
+                        Then, in this case, every cobasis is basis.\pn
+                    \item \textbf{two columns from $I_4$ and two from $D$.}
+                        Here are essentialy 3 subcases. And those are $\{1, 2, 5, 6\}$, $\{1, 2, 6, 7\}$ and $\{1, 2, 7, 8\}$. Any other can be
+                        reduced to one of those by exchanging rows.\pn
+                        
+                        In the subcase $\{1, 2, 5, 6\}$ the determinant is 0. And the determinant of the complement $\{3, 4, 7, 8\}$ is 0 also.\pn
+                        
+                        In the subcase $\{1, 2, 6, 7\}$ the determinant is 2 which is $-1 \mod 3$. 
+                        And the determinant of the complement $\{3, 4, 5, 8\}$ is -2, which is $1 \mod 3$.
+                        
+                        In the subcase $\{1, 2, 7, 8\}$ the determinant is 0. And the determinant of the complmement $\{3, 4, 5, 6\}$ is 0 also.\pn
+                        
+                        Then, in this case also, every cobasis is basis.\pn
+                \end{enumerate}
+                    
+                The case \textbf{one colum from $I_4$ and three from $D$} is alredy covered in the complements of the case \textbf{trhee columns from $I_4$ and one from $D$.},
+                Similarly, the case \textbf{four columns from $D$} is covered in the complement of the case \textbf{four columns from $I_4$}.
+                
+                Then, in any case, every cobasis is basis and then $R_8$ is identically self-dual.
         \item $\,$\pn
             \begin{figure}[H]
                 \begin{center}
