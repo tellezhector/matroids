@@ -171,6 +171,101 @@
                             \includegraphics[width=5cm]{Test2/Problem1/1_0-1_0-1_0.png}
                             \end{center}                        
                         \end{figure}\pn
+                        This case cannot be identically self-dual because it has loops.
+                    \item \textbf{Cycles of size at most 2.}
+                        All the blocks will have at most two edges. Then all the posibilities are combinations of self-dual graphic matroids
+                        with 2 edges and at least two parallel edges. Cases shown below:
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/2-2-2.png}
+                            \end{center}                        
+                        \end{figure}\pn
+                        This case is identically self-dual by the same arguments as in [\ref{t2:p1_2-2.png}] and [\ref{t2:p1_2.png}].\pn
+                        
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/2-2-1_0.png}
+                            \end{center}                        
+                        \end{figure}\pn
+                        This case cannot be identically self-dual because it has loops.\pn                        
+                        
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/2-1_0-1_0.png}
+                            \end{center}                        
+                        \end{figure}\pn
+                        This case cannot be identically self-dual because it has loops.
+                        
+                    \item \textbf{Cycles of size at most 3.}
+                        If there is to be a triangle, and there are two blocks, there are two posibilities. First notice that there is not
+                        possible to have two triangles. Then the isomorphism will map the block with the triangle two itself, or it will map
+                        the block with the triangle to the other block.
+                        
+                        If it is mapped to itself, then the block with the triangle must have more than the trhee edges of the triangle, this
+                        is because a triangle is not self-dual. Then, such block will have at least 4 edges. It cannot have 5 edges, or else
+                        the block with the other edge must be mapped to itself, but there are not self-dual graphic matroids with one edge.
+                        Then we have again a triangle with a parallel edge as in [\ref{t2:p1_4.png}]. Then these leads us to two new posiblilities
+                        shown below.
+                        
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/4-1_0.png}
+                            \end{center}                        
+                        \end{figure}\pn    
+                        This case cannot be identically self-dual because it has loops.
+                        
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/4-2.png}
+                            \end{center}                        
+                        \end{figure}\pn
+                        This case cannot be identically self-dual because it has a cobasis with a circuit.
+                        
+                        If the triangle is mapped to the other block then there is nothing else to do. The other block is obligated to be
+                        the dual of a triange.
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/3-111.png}
+                            \end{center}                        
+                        \end{figure}\pn
+                        This case cannot be identically self-dual because it has a cobasis with a circuit.
+                        
+                    \item \textbf{Cycles of size at most 4.} 
+                        This case is oblicated to consist of only one block, and that is because a
+                        4-cycle is not self-dual.
+                        
+                        Then, there are two main posibilities. The 4-cycle has adjacent antipodes or not.\pn 
+                        
+                        If it has, there are three posibilities.\pn 
+                        
+                        The other pair of antipodes are adjacent also, in this 
+                        case what we have is $K_4$, which is $W_3$, which in other excercises is proved to be self-dual 
+                        (but not identically self-dual as it has a cobasis with a cycle).\pn
+                        
+                        The edge that is adjacent to two antipodes has a parallel edge. (This case is not self-dual, the triangles share two edges
+                        with the exterior face, this will casue two pairs of parallel edges and the original graph has only one).\pn
+                        
+                        The any edge of the cycle has a parallel edge. This case is self-dual.\pn
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/4_Xplus1.png}
+                            \end{center}                        
+                        \end{figure}\pn
+                        This case is not identically self-dual as it has a cobasis that contains a cycle.
+                                                
+                        If the 4-cycle doesn't have adjacent antipodes. Then there are essencially two cases. One triple edge, or
+                        two pair of parallel edges.\pn
+                        
+                        In the case of a triple edge we have a self-dual graph.
+                        \begin{figure}[H]
+                            \begin{center}
+                            \includegraphics[width=5cm]{Test2/Problem1/4_conTriple.png}
+                            \end{center}                        
+                        \end{figure}\pn                        
+                        This case is not identically self-dual as it has a cobasis that contains a cycle.
+                        
+                        And, finally, the case with two pairs of parallel edges is not self-dual. Its dual doesn't have two paris of 
+                        parallel edges.
                 \end{itemize}
         \item 
             Any graph on six or fewer elements obtained from a forest adding a parallel edge to each edge in the forest.
