@@ -12,13 +12,7 @@ function void = look_for_common_circuits(A, T, r)
 			p
 			pA
 			pa
-			"--------------------******---------------"
-		endif
-		
-		if(mod(i, 100) == 0)
-			"==="
-			i
-			"==="
+			"-----------------------------------"
 		endif
 	endfor
 endfunction
