@@ -6,5 +6,4 @@ Paving no gráfico (2.10.iii)
 11 2.3 10 (Escribir 1/3)
 13 2.4 4 (Escribir 2/3)
 15 3.1 4 Todo
-16 3.2 3 Todo
 17 3.2 5 Todo
