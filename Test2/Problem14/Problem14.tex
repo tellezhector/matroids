@@ -8,4 +8,54 @@
 	\end{enumerate}
 }
 \begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+        \item 
+            Let $B$ be a basis for $M \setminus T$. We would like to prove that
+            $B$ is also a basis for $(M^* / T)^*$, or, what is the same, 
+            that $E \setminus (B \cup T)$ is a base for $M^* / T$.\pn
+            
+            As $B$ is a basis for $M \setminus T$, $B$ is independent in $M$. And then
+            there is a basis $B'$ of $M$ such that $B \subset B'$. Now $E \setminus B'$
+            is basis for $M^*$, and then $B^*_T = E \setminus B' \cap T$ is basis for $T$ in
+            $M^*$.
+            
+            Now
+            \begin{align}
+                E \setminus ((E \setminus (T \cup B)) \cup B^*_T)   &=  (T \cup U) \cap (E \setminus B^*_T)                                 \\
+                                                                    &=  (T \cup U) \cap (E \setminus ((E\setminus B') \cap T))              \\
+                                                                    &=  (T \cup U) \cap (B'\cup (E \setminus T))                            \\
+                                                                    &=  ((T \cup B) \cap B) \cup ((T \cup B) \cap( E\setminus T))           \\
+                                                                    &=  (T \cap B') \cup B                                                  \\
+                                                                    &=  (T \cap B') \cup ((E \setminus T) \cap B')                          \\
+                                                                    &=  B'
+            \end{align}
+            
+            Then, every basis for $M \setminus T$ is a basis for $(M^* / T)^*$.\pn
+            
+            Now, let $B$ be a basis for $(M^* / T)^*$, then $(E \setminus T) \setminus B = E \setminus (B \cup T)$ 
+            is a basis for $M^* / T$, then, there is a basis $B_T^*$ for $T$ in $M^*$ such that
+            $(E \setminus (B \cup T)) \cup B_T^*$ is a basis for $M^*$.\pn
+            
+            Let $B' = (B \cup T) \cap (E \setminus B_T^*)$, $B'$ is a basis for $M$. Now
+            \begin{align}
+                    (E \setminus T) \cap B' &=  (E \setminus T) \cap (B \cup T) \cap (E \setminus B_T^*)        \\
+                                            &\comment{remember that $B \cap T = \emptyset$}                   \\
+                                            &=  B \cap (E \setminus B_T^*)                                      \\
+                                            &=  B.
+            \end{align}
+            
+            This menas that $B$ is a basis for $M \setminus T$ also. And we have finished.
+        \item
+            Applying the  previous part, 
+                \begin{align}
+                        (M / T)^*   &=  ((M^*)^* / T)^* \\
+                                    &=  M^* \setminus T.
+                \end{align}
+        \item
+            Applying the previous part (the first one),
+                \begin{align}
+                        M^* / T     &=  ((M^* / T)^*)^*         \\
+                                    &=  (M \setminus T)^*.
+                \end{align}
+    \end{enumerate}
 \end{proof}
