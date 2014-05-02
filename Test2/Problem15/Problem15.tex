@@ -1,8 +1,26 @@
 \prob
 {
 	Suppose that, for all elements $f$ of a loopless matroid $M$, $r(M\setminus \{f\}) = r(M)$, but that,
-	for some elements $e$ and $g$, $r(M \setminus e, g) = r(M \setminus e / g)$. Show that $\{e, g\}$
+	for some elements $e$ and $g$, $r(M \setminus \{e, g\}) = r(M \setminus \{e\} / g)$. Show that $\{e, g\}$
 	is a cocircuit of $M$.
 }
 \begin{proof}
+    Given that for every $f$, there is a basis of $M$ that doesn't contain $f$, then as $\{f\}$ doesn't
+    intersect every basis, $\{f\}$ is coindependent. That is $M^*$ is loopless.\pn
+    
+    Now, let $e, g \in M$ such that $r(M \setminus \{e, g\}) = r(M \setminus \{e\} / g)$.\pn
+    
+    As $M$ is loopless and $M^*$ is loopless, $r(M \setminus \{e\} / g) < r (M \setminus \{e\})$.\pn
+    
+    Let $B$ is a basis for $M$ such that $e, g \notin B$, then $B \subset E(M) \setminus \{e\}$ and then
+    $B$ is a basis for $M \setminus \{e\}$ and also is a basis for $M \setminus \{e, g\}$. Then
+        \begin{align}
+                |B| &=  r(M \setminus \{e\})        \\
+                    &>  r(M \setminus \{e\} / g)    \\
+                    &=   r(M \setminus \{e, g\})     \\
+                    &=  |B|
+        \end{align}
+        
+    Which is a contradiction. Then there is not such $B$ that doesn't intersect $\{e, g\}$, and then $\{e, g\}$ is
+    coindependent. As $M^*$ is loopless then $\{e, g\}$ is a cocircuit of $M$, as we wished to prove.
 \end{proof}

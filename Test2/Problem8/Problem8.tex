@@ -1,9 +1,48 @@
 \prob
-{
+{$\,$\pn
     \begin{enumerate}[label=(\roman*)]
         \item Show that the geometric dual of a plane graph is connected.
         \item Give an example of a plane graph $G$ for which $(G^*)^* \not= G$.
     \end{enumerate}
 }
-\begin{proof}
+\begin{proof}$\,$\pn
+    \begin{enumerate}[label=(\roman*)]
+        \item Take any embeding of a plane graph, take its dual, and take any pair of vertices of its dual.
+            such vertices are faces in the original embeding. It is always possible to find a curve that joins 
+            that pair of vertices and that avoids any other vertice in the original embeding. Such curve defines
+            a path bewteen the pair of vertices.
+            
+        \item Any disconnected graph will work, $(G^*)^*$ will be connected but $G$ not. Look at the following example.
+            \begin{figure}[H]
+                \begin{center}
+                \includegraphics[width=6cm]{Test2/Problem8/TwoTriangles.png}
+                \end{center}                            
+                \caption{disconnected graph}
+                \label{t2:p8_TwoTriangles.png}                        
+            \end{figure}\pn
+            
+            \begin{figure}[H]
+                \begin{center}
+                \includegraphics[width=6cm]{Test2/Problem8/TwoTrianglesDual.png}
+                \end{center}                            
+                \caption{disconnected graph and its dual}
+                \label{t2:p8_TwoTrianglesDual.png}                        
+            \end{figure}\pn
+            
+            \begin{figure}[H]
+                \begin{center}
+                \includegraphics[width=6cm]{Test2/Problem8/TwoTrianglesDualDual.png}
+                \end{center}                            
+                \caption{disconnected graph dual and its dual}
+                \label{t2:p8_TwoTrianglesDualDual.png}                        
+            \end{figure}\pn
+            
+            \begin{figure}[H]
+                \begin{center}
+                \includegraphics[width=6cm]{Test2/Problem8/TwoTrianglesConnected.png}
+                \end{center}                            
+                \caption{disconnected graph double dual}
+                \label{t2:p8_TwoTrianglesConnected.png}                        
+            \end{figure}\pn
+    \end{enumerate}
 \end{proof}

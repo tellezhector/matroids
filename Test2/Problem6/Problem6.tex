@@ -3,4 +3,29 @@
     Show that, in a binary matroid, a circuit and cocircuit cannot have an odd number of common elements.
 }
 \begin{proof}
+    Let $M$ be a binary matroid with rank $n$ and such that $|E(M)| = n + r$.\pn
+    
+    Theorem 2.2.8 from~\cite{Oxley} sates that if a linear matroid is expresed as $[I_n | D]$,
+    then its dual matroid can be represented with the matrix $[-D^T | I_r]$.\pn
+    
+    In the case of binary matroids is the same $[-D^T | I_r]$ than $[D^T | I_r]$ (In general it is always the same, multiplying columns
+    by $-1$ doesn't change dependency/independency conditions).\pn
+    
+    Lets say that $C$ is a circuit of $M$ and $C^*$ is a cocircuit of $M$. As $C$ is a circuit in a binary matroid, 
+    the sum of their elements must be the zero vector.\pn
+    
+    The representation of $M$ can always be arranged in such way that $C$ consists of $|C|-1$ columns from $I_n$ (lets call them $I$) 
+    and one column of $D$ (lets call it $d_j$ assuming that $d_j$ is the $j$-th column of $D$).\pn
+
+    With such representation is easy to see that if $e_i \in I$ is the $i$-th colmun of $I_n$, then $(d_j[i] = 1$ (that is, the
+    $i$-th entry of $d_j$). Conversely, if $d_j[i] = 1$ then $e_i \in I$.\pn
+    
+    In the $j$-th row of $[D^T|I_r]$ the first $n$ entries are exactly the entries of $d_j$, in the next $r$ entries are exactly
+    one one and it is in the $j$-th entry of $I_r$. This is, the $j$-th row of $[D^T|I_r]$ has a one in its $k$-entry if and only
+    if the $k$ column of $[I_n | D]$ was in $C$.\pn
+    
+    Given that $C^*$ is a circuit in $M^*$, the sum of its columns must be the zero vector. In particular, in $[D^T|I_r]$ the
+    sum of their $j$-th entry, must be $0$. That is, the number of ones in their $j$-entry must be even. As we saw
+    that the $j$-th row of $[D^T|I_r]$ have ones exactly in the entries corresponding of columns of $C$, then the intersection of
+    $C$ and $C^*$ must be even.
 \end{proof}

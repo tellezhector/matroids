@@ -1,5 +1,5 @@
 \prob
-{
+{\label{p11}
     Let $r$ be an integer exceeding one and $W_r$ be the $r$-wheel. Show that:
     \begin{enumerate}[label=(\roman*)]
         \item $W_3 \cong K_4$.
@@ -7,5 +7,31 @@
         \item $M(W_4)$ is isomorphic to a restriction of $M^*(K_{3,3})$.
     \end{enumerate}
 }
-\begin{proof}
+\begin{proof}$\,$\pn
+
+    \begin{enumerate}
+        \item   It is sufficient to prove that $W_3$ is complete.\pn
+                The central vertex is always adjacent to the rest of the vertices.\pn
+                Any vertex in the exterior cycle is adjacent to extactly other two of its type, but as $W_3$ has
+                only 3 vertices in its exterior cycle, then any vertex in the exterior cycle is adjacent to the other
+                two, plus, it is adjacent to the center.\pn
+                
+                We have proved that any vertex has degree 3 and there are 4 vertices. Then the graph is complete and
+                we are done.\pn
+                
+        \item   Any triangle that is induced by the central vertex and two of the external vertices under the
+                dual operator will end up as a vertex of degree tree, adjacent to two triangles of its type and
+                to the exterior face.\pn
+                
+                There are exactly $r$ triangles of this type in $W_r$, then the external face will be adjacent to
+                every one of these triangles.\pn
+                
+                Then the dual operator will make a graph such that it has a vertex adjacent to the rest of the vertices and
+                the rest of the vertices are adjacent in addition to exactly two of its type. This is, the dual of 
+                $W_r$ is $W_r$ itself.\pn
+                
+        \item   It is easy to see that $W_4 \cong K_{3, 3} / \{e\}$ for any $e \in E(K_{3, 3})$. Using [\ref{p14}], we have that
+                $M^*(K_{3, 3} / \{e\}) \cong M^*(W_4) \cong M(W_4^*) \cong M(W_4)$.
+                
+    \end{enumerate}
 \end{proof}

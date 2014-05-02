@@ -9,10 +9,10 @@ function C = combinations(n, m)
 		return;
 	endif;
 
-    Y = combinations(n-1, m-1) + 1;
+	Y = combinations(n-1, m-1) + 1;
 	Y = [(ones(size(Y, 1), 1)), Y];
-	
-    X = combinations(n-1, m) + 1;
-	
+
+	X = combinations(n-1, m) + 1;
+
 	C = [Y; X];
 endfunction

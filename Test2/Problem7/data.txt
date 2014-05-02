@@ -1,0 +1,51 @@
+# Created by Octave 3.4.3, Wed Apr 16 06:22:03 2014 Central Daylight Time (Mexico) <unknown@unknown>
+# name: A1
+# type: matrix
+# rows: 4
+# columns: 8
+ 1 0 0 0 0 1 1 1
+ 0 1 0 0 1 0 1 1
+ 0 0 1 0 1 1 0 -1
+ 0 0 0 1 1 1 1 0
+
+
+# name: A2
+# type: matrix
+# rows: 4
+# columns: 8
+ 1 0 0 0 0 1 1 -1
+ 0 1 0 0 1 0 1 -1
+ 0 0 1 0 1 1 0 -1
+ 0 0 0 1 1 1 1 1
+
+
+# name: R8
+# type: matrix
+# rows: 4
+# columns: 8
+ 1 0 0 0 -1 1 1 1
+ 0 1 0 0 1 -1 1 1
+ 0 0 1 0 1 1 -1 1
+ 0 0 0 1 1 1 1 -1
+
+
+# name: T8
+# type: matrix
+# rows: 4
+# columns: 8
+ 1 0 0 0 0 1 1 1
+ 0 1 0 0 1 0 1 1
+ 0 0 1 0 1 1 0 1
+ 0 0 0 1 1 1 1 0
+
+
+# name: ans
+# type: matrix
+# rows: 4
+# columns: 1
+ 1
+ 1
+ 1
+ 0
+
+
