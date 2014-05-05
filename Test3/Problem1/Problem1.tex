@@ -1,4 +1,61 @@
 \prob
 {
-    Give a real representation for $M(K_4)$ and prove that such matrix is totally unimodular.
+    Give a real representation for $M(K_4)$ that is totally unimodular.
 }
+\begin{proof}
+    Lets take a incidence matrix for $K_4$, and give it any orientation by replacing exaclty one $1$ by a $-1$ in each column. 
+    It is a representation on $GF(3)$, we have already justified it in \ref{t1:p1iii}, and for the same justification, it is a 
+    representation on $\R$ as well. Les call $M$ such matrix.\pn
+    
+    \begin{align}
+        M =
+            \bordermatrix{
+                    &       &       &       &       &       &       \cr
+                    &   1   &   1   &   1   &   0   &   0   &   0   \cr
+                    &  -1   &   0   &   0   &   1   &   1   &   0   \cr
+                    &   0   &  -1   &   0   &  -1   &   0   &   1   \cr
+                    &   0   &   0   &  -1   &   0   &  -1   &  -1   
+            }    
+    \end{align}
+    
+    
+    Lets see that it is totally unimodular.\pn
+    
+    \begin{itemize}
+        \item [case $1 \times 1$] 
+            There is nothing to prove. The matrix consists of only $1\times 1$ submatrices with 1, 0, or -1.
+        
+        \item [case $2 \times 2$] 
+            Cases with a column or row of zeros have determinat 0. So lets see the remaining cases.\pn 
+            
+            There cannot be a case with no zero entries there are no two columns that contains non-zero entries in the same coordinates.\pn
+            
+            So, there should be at least one zero entrie. Now, if you have a column with only one non-zero entrie with value $r$, and the determinant of
+            the resultant submatrix obtained by deleting the row and column of that non-zero entrie is $D$, then the determinant of the original
+            matrix will be $\pm r D$. So, in our case, $r \in \{-1, 1\}$ and $D \in \{-1, 0, 1\}$. So any $2 \times 2$ submatrix of $M$ will have 
+            determinant $-1, 0$ or $1$.
+            
+        \item [case $3 \times 3$]
+            As we have already proved, if a $3 \times 3$ submatrix $N$ of $M$ contains a column with only zero entries or with only one non-zero entrie, then
+            its determinant will be $-1, 0$ or $1$. Then the only case left is when any column contain two non-zero entries.\pn
+            
+            Such case will essentially be
+            \begin{align}
+                N =
+                    \bordermatrix{
+                            &       &       &       \cr
+                            &   1   &   1   &   0   \cr
+                            &  -1   &   0   &   1   \cr
+                            &   0   &  -1   &  -1
+                    }    
+            \end{align}
+            And any other case can be reduced to this by row and column operations which affect the determinant sign but not absolute value.
+            It is easy to see that $N$ is the incidence matrix of an oriented triangle, and in \ref{t1:p1iii} we saw that such matrices have
+            dependent columns set and then its determinant is always $0$.
+            
+        \item [case $4 \times 4$]
+            Again, the only case left to discuss will be the case in which every column has exactly two non-zero entries. That will be equivalent
+            to choose four edges in the underlaying oriented $K_4$, as any tree in $K_4$ has exactly three edges, then any four edges will form
+            a dependent set (because it will contain cycles and again thanks to \ref{t1:p1}) and then the determinant in such case will always be zero.
+    \end{itemize}
+\end{proof}
