@@ -1,0 +1,12 @@
+# Created by Octave 3.4.3, Wed May 07 04:23:41 2014 Central Daylight Time (Mexico) <unknown@unknown>
+# name: R10
+# type: matrix
+# rows: 5
+# columns: 10
+ 1 0 0 0 0 -1 1 0 0 1
+ 0 1 0 0 0 1 -1 1 0 0
+ 0 0 1 0 0 0 1 -1 1 0
+ 0 0 0 1 0 0 0 1 -1 1
+ 0 0 0 0 1 1 0 0 1 -1
+
+
