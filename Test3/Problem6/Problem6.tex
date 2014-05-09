@@ -1,16 +1,70 @@
 \prob
 {
     For $r \geq 2$, consider an $r\times (2^r -1)$ matrix $A_r$ whose columns are all of the non-zero vectors in
-    $V(r,2)$. The vectors in the orthogonal subspace of $\mathcal{R}(A_r)$ from the binary Hamming code $H_r$ is only
+    $V(r,2)$. The vectors in the orthogonal subspace of $\mathcal{R}(A_r)$ form the binary Hamming code $H_r$ is only
     determined up to a permutation of the coordinates. Show that:
     \begin{enumerate}[label=(\roman*)]
-        \item $H_3$ equals the row space of the following matrix over $GF(2)$.
-                \begin{center}
-                    \includegraphics[width=4cm]{Test3/Problem6/matrix.png}
-                \end{center}\pn
+        \item $H_3$ equals the row space of the following $G$ matrix over $GF(2)$.
+                \begin{align}
+                G =
+                    \bordermatrix{
+                            &       &       &       &       &       &       &       \cr
+                            &   1   &   0   &   0   &   0   &   0   &   1   &   1   \cr
+                            &   0   &   1   &   0   &   0   &   1   &   0   &   1   \cr
+                            &   0   &   0   &   1   &   0   &   1   &   1   &   0   \cr
+                            &   0   &   0   &   0   &   1   &   1   &   1   &   1   \cr
+                    }  
+                \end{align}\pn
         \item $H_r$ has dimension $2^r -r - 1$.
         \item There is a partition of $V(2^r - 1, 2)$ into $m$ classes where $m$ is the number of vectors in $H_r$ and
               each class contains a unique member $v$ of $H_r$ together with all members of $V(2^r - 1, 2)$ that differ from $v$ in
               exactly one coordinate.
     \end{enumerate}
 }
+\begin{proof}
+    \begin{enumerate}[label=(\roman*)]
+        \item   
+            Lets write the following matrix.
+            \begin{align}
+                A_3 =
+                    \bordermatrix{
+                            &       &       &       &       &       &       &       \cr
+                            &   0   &   1   &   1   &   1   &   1   &   0   & 0     \cr
+                            &   1   &   0   &   1   &   1   &   0   &   1   & 0     \cr
+                            &   1   &   1   &   0   &   1   &   0   &   0   & 1     \cr
+                    }        
+            \end{align}
+            
+            From the definition. $H_3$ is the orthogonal subspace of $\mathcal{R}(A_3)$. Lets write $A_3$ as $A_3 = [ M | I_3]$. It is easy to
+            see that $G = [I_4 | M^T]$.\pn
+            
+            Then $G A_3^T =  [I_4 | M^T] [\frac{M^T}{I_3}] = [M^T + M^T] = 0_{4 \times 3}$. Which means that $\mathcal{R}(G) \subset H_3$.
+            As $A_3$ has rank $3$ (In its right side it contains the $I_3$ identity matrix, which makes all of its rows linearly independent) and $G$ has
+            rank $4$ (same reason) and we have proved that its genearted vector spaces are orthogonal, then they must be orthogonal complements (because
+            $V(2^3 -1, 2)$ has dimmension $2^3 - 1 = 7$).
+        \item
+            $V(2^r -1, 2)$ has dimmension $2^r - 1$, and $A_r$ has dimmension $r$. As $H_r$ is orthogonal to $\mathcal{R}(A_r)$ then the rank-nullity theorem
+            says that 
+            \begin{align}
+                    2^r - 1 = \dim(V(2^r -1, 2))    &=  \dim(A_r) + \dim(H_r)   \\
+                                                    &=  r + \dim(H_r)           \\
+            \end{align}
+            
+            Which means $\dim(H_r) = 2^r - r - 1$
+        \item
+            If $r=1$ there is nothing to prove. Then Suppose that $r \geq 2$ and that there are distinct vectors $v, w \in H_r$ and vectors 
+            $e_i, e_j$ (with zeros everywhere and ones in the entries $i$ and $j$ respectively) such that $v + e_i = w + e_j$. That is, there 
+            is a vector in $V(2^r - 1, 2)$ such that it belongs to two different classes. Then $v + w = e_i + e_j \in H_r$ which means that 
+            $e_i + e_j$ must be orthogonal to all the rows in $A_r$. Note that $e_i \neq e_j$, otherwise $v = w$ and we have assumed them to be
+            distinct. The columns of $A_r$ represent all the non-empty subsets of a set with $r$ elements,
+            the $k$-th row of $A_r$ says if the element $k$ is in a given subset or not. Given that the columns $i$ and $j$ are distinct, then
+            the subsets that they represent are distinct, and then, ther must be at least one element that one has and the other one doesn't.
+            Let $u$ be the row that represent such element, then $(u) \cdot (e_i + e_j) = 0 + 1 = 1 \neq 0$ which means  $e_i + e_j$ cannot belong
+            to $H_r$ and then there are not elements that belong to two different classes.\pn
+            
+            He have proved that all the classes described are disjoint, now lets see that they cover $V(2^r - 1, 2)$. It is easy to see that 
+            each class has exactly $2^r$ elements and as $H_r$ has dimension $2^r - r - 1$ it contains $2^{2^r - r - 1}$ elements. Then
+            the union of all the classes contain $2^{2^r - r - 1} \cdot 2^r = 2^{2^r - 1}$ elements, which is exactly de cardinality of 
+            $V(2^r - 1, 2)$.
+    \end{enumerate}
+\end{proof}
