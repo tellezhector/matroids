@@ -4,5 +4,40 @@
     contains $X$ if and only if $M$ has a circuit and a cocircuit whose intersection is $X$.
 }
 \begin{proof}
-	9.1.5
+	We are going to cite a pair of results from \cite{Oxley}.
+    
+    \begin{lemma}[Lemma 9.1.3 from \cite{Oxley}]\label{oxley:lemma9.1.3}
+        Let $N$ be a minor of a matroid $M$ and suppose that the set $X$ is the intersection of a 
+        circuit and a cocircuit in $N$. Then $X$ is the intersection of a circuit and a cocircuit in $M$.
+    \end{lemma}
+    
+    \begin{lemma}[Lemma 9.1.4 from \cite{Oxley}]\label{oxley:lemma9.1.4}
+        Suppose that, ina matroid $M$, the non-empty set $X$ is the intersection of a circuit $C$ and a cocircuit $C^*$.
+        Then $M$ has a minor $N$ such that $X$ is a spanning circuit of both $N$ and $N^*$ and $r(N) = |X| - 1 = r(N^*)$
+    \end{lemma}
+        
+    Let $X$ be a 3-element subset of $M$.\pn
+    
+    Suppose that $M$ has a $U_{2,4}$-minor whose ground set contains $X$.\pn
+    
+    As $|X| = 3$, $X$ is a circuit. As $U_{2,4}$ is indentically self-dual, $X$ is a cocircuit. As
+    $X$ is itself a circuit and a cocircuit, in particular it is the intersection of a circuit and a cocircuit. And lemma \ref{oxley:lemma9.1.3}
+    says that there are $C$ and $C^*$ circuit and cocircuit respectively such that $X = C \cap C^*$ as we wished to prove.\pn
+    
+    Now suppose that $M$ has a circuit $C$ and a cocircuit $C^*$ whose intersection is $X$. By lemma \ref{oxley:lemma9.1.4} there is a minnor
+    such that $X$ is spanning circuit of $N$ and $N^*$ and $r(N) = r(N^*) = |X| - 1 = 2$. $N$ is already a minor whose ground set contains
+    $X$. Lets see that $N$ must be isomorphic to $U_{2,4}$.\pn 
+    
+    $|E(N)| = r(N) + r(N^*) = 2 + 2 = 4$, so at least $N$ has the right size.\pn
+    
+    Let $Y \subset E(N), |Y| = 2$.\pn 
+    
+    If $Y \subset X$, then $Y$ is independent and $X \subset cl(Y)$ (both because $X$ is a circuit), as $cl(X) = E(N)$,
+    then $E(N) = cl(X) \subset cl(cl(Y)) = cl(Y)$ and then $Y$ is independent and spanning, that is, $Y$ is basis.\pn
+    
+    Let $\{ v \} = E(N) \setminus X$. If $Y \not\subset X$, then $Y = \{ u, v\}$ with $u \in X$. As $X$ is cocircuit, then $\{v\}$ must be
+    an hyperplane. As $\{v\}$ is an hyperplane, then, adding any new element we will get an spanning set and then $r(Y) = 2$. So $Y$ is a
+    basis.\pn
+    
+    We have proved that $N \cong U_{2,4}$, as we wished to see.
 \end{proof}
