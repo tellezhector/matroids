@@ -1,7 +1,7 @@
 \prob
 {
     (Whitney 1932a; Ore 1967, Section 3.3) The graph $H$ is a Whitney dual of the graph $G$ if there is a bijection 
-    $\psi : E(E) \rightarrow E(H)$ such that, for all subsets $Y \subset E(G)$,
+    $\psi : E(G) \rightarrow E(H)$ such that, for all subsets $Y \subset E(G)$,
     \begin{align}
             r(M(H)) - r(M(H)\setminus \psi(Y)) = |Y| - r(M(G)|Y).
     \end{align}
@@ -11,3 +11,69 @@
         \item Prove that a graph is planar if and only if it has a Whitney dual.
     \end{enumerate}
 }
+\begin{proof}
+    Before anything, lets make some observations. Let $G$ be a graph and $H = G^*$, let $\psi : E(G) \rightarrow E(G^*)$ be the identity.
+    For any $Y \subset E(G)$, we have that
+    \begin{align}
+            r(M(G^*)) - r(M(G^*)\setminus \psi(Y))  &= |E(G)| - r(G) - (|E(G^*)\setminus Y| - r(G) + r(M(G)|Y))     \\
+                                                    &= |E(G)| - r(G) - (|E(G)| - |Y|) + r(G) - r(M(G)|Y)            \\
+                                                    &= - r(G) + |Y| + r(G) - r(M(G)|Y)                              \\
+                                                    &= |Y| - r(M(G)|Y).
+    \end{align}
+    
+    So, every dual is a Whitney dual. As the rank conserves all of its properties under any matroid isomorphism, any
+    matroid isomporphic to $G^*$ will also be a Whitney dual.\pn
+    
+    Now, suppose $H$ is a Whitney dual of $G$ under a bijection $\psi : E(G) \rightarrow E(H)$, let $X \subset E(H)$, and 
+    define $Y = \psi^{-1} (X)$. By definition of Whitney dual, we have
+    
+        \begin{align}
+                r(M(H)) - r(M(H)\setminus \psi(Y)) &= |Y| - r(M(G)|Y) \\ 
+                r(M(H)) - r(M(H)\setminus \psi(\psi^{-1} (X))) &= |\psi^{-1} (X)| - r(M(G)|\psi^{-1} (X))\\
+                r(M(H)) - r(M(H)\setminus X) &= |\psi^{-1} (X)| - r(M(G)|\psi^{-1} (X)) \label{this_bitch}\\
+        \end{align}
+    Setting $X =  E(H)$ we get
+    
+        \begin{align}
+                r(M(H)) = |E(G)| - r(M(G)) \label{this_new_bitch}
+        \end{align}
+
+
+    From \eqref{this_bitch}, making use of $E(H) \setminus X$ instead of $X$ we have
+    \begin{align}
+            r(M(H)) - r(M(H)\setminus (E(H) \setminus X)) &= |\psi^{-1} (E(H) \setminus X)| - r(M(G)|\psi^{-1} (E(H) \setminus X)) \\
+            r(M(H)) - r(M(H)|X) &= |\psi^{-1} (E(H) \setminus X)| - r(M(G)\setminus \psi^{-1} ( X)) \\
+            r(M(H)|X) &= r(M(G)\setminus \psi^{-1} ( X)) -|\psi^{-1} (E(H) \setminus X)| + r(M(H)) \label{this_third_bitch}\\
+    \end{align}
+        
+    Finally, from \eqref{this_third_bitch} we have
+    \begin{align}
+            r(M(H)|X)   &=  r(M(G)\setminus \psi^{-1} (X)) -|\psi^{-1} (E(H) \setminus X)| + r(M(H))                \\
+                        &\comment{applying \eqref{this_new_bitch}}                                                  \\
+                        &=  r(M(G)\setminus \psi^{-1} (X)) -|\psi^{-1} (E(H) \setminus X)| + |E(G)| - r(M(G))       \\
+                        &\comment{reordering and grouping}                                                          \\
+                        &=  r(M(G)\setminus \psi^{-1} (X)) - r(M(G))  + (|E(G)| -|\psi^{-1} (E(H) \setminus X)|)    \\
+                        &\comment{rewriting $|\psi^{-1} (E(H) \setminus X)|$ using that $\psi$ is bijection}                                                                        \\
+                        &=  r(M(G)\setminus \psi^{-1} (X)) - r(M(G))  + (|E(G)| - |E(G)| - |\psi(X)|)               \\
+                        &\comment{simplifying}                                                                      \\
+                        &=  r(M(G)\setminus \psi^{-1} (X)) - r(M(G))  - |\psi(X)|                                   \\
+                        &\comment{applying equivalence of rank function Proposition 1.2.9 \cite{Oxley}}             \\
+                        &=  r^*(M(G)|\psi^{-1}(X))
+    \end{align}
+    
+    We have proved that $\psi$ is a bijection such that the rank function $r$ and $r^*$ for $M(H)$ and $M^*(G)$ respectively remain invariant under
+    $\psi$, that is, we have proved that $M(H)$ is isomporphic to $M^*(G)$ under the bijection $\psi$.
+    
+    The rest is easy.\pn
+    \begin{enumerate}[label=(\roman*)]
+        \item   Is obvious applying that if $M(H)$ is isomporphic to $M^*(G)$ then $M(G)$ is isomporphic to $M^*(H)$.
+        \item   Every abstract dual is a Whitneys dual and vice-versa as we have proved above. Then every geometric dual is
+                a Whitney dual. But using that the geometric dual is always connected, and the results from above, any
+                no connected graph will be Whitneys dual of its own dual, but it can not be its geometric dual, since this last
+                is always connected.
+        \item   If a graph is planar, then any geometric dual is a Whitney dual. \pn
+        
+                If a graph has a Whitney dual under a bijection $\psi$, then such Whitney dual is an abastract dual under the
+                same bijection $\psi$, and graph is planar if and only if it has an abstract dual.\pn
+    \end{enumerate}
+\end{proof}
