@@ -4,3 +4,43 @@
     containing $e$. Show that the circuits of $M$ not containing $e$ are precisely the minimal non-empty sets of the
     form $C_1 \triangle C_2$ where $C_1, C_2 \in \mathcal{C}_e$.
 }
+\begin{proof}
+
+    We are going to make strong use of the theorem $9.1.2$ from \cite{Oxley}, which among other things states that
+    a matroid $M$ is binary if and only if for every pair of distinct circuits $C_1, C_2$, $C_1 \triangle C_2$ is disjoint
+    union of circuits.\pn
+    
+    First we are going to prove that if $C$ is a circuit of $M$ that doesn't contains $e$, then there are $C_i, C_j \in \mathcal{C}_e$ 
+    such that $C = C_i \triangle C_j$.\pn
+    
+    There is always a circuit $C_i$ such that it contains $e$ and it intersects $C$. To see this
+    let $f \in C$. As $M$ is connected there is a circuit $C_i$ such that $e, f \in C_i$ and therefore $f \in C \cap C_i$.\pn
+    
+    Suppose that $C_i$ is such that $C \triangle C_i$ is a circuit, lets call such circuit $C_j$. $C_i$ and $C_j$ are
+    both circuits that contain $e$ and the following holds:\pn
+    
+    \begin{align}
+            C_j &= C \triangle C_i   \\
+            C_i \triangle C_j &= C \triangle C_i \triangle C_i       \\     
+            C_i \triangle C_j &= C.            
+    \end{align}
+    
+    And we would be done. Now lets prove that such circuit $C_i$ exists.\pn
+    
+    Let $C_i$ be a circuit that intersects $C$ and contains $e$ such that $C_i \setminus C$ is minimal. We claim that $C_i$ is such that
+    $C_i \triangle C$ is a single circuit. Suppose it is false, any circuit contained in $C_i \triangle C$ must intersect $C \setminus C_i$, 
+    otherwise it will be properly contained in $C_i$, which is a contradiction to circuits minimality, for the same reason it must intersect 
+    $C_i \setminus C$ or it will be properly contained in $C$.\pn
+    
+    There must be a circuit $C_i' \subset C_i \triangle C$ that contains $e$. As at least another circuit intersects $C_i \setminus C$, then
+    $C_i' \setminus C \varsubsetneq C_i \setminus C$, contradicting the minimality of $C_i \setminus C$ under the circuits that contain $e$ and
+    intersect $C$.\pn
+    
+    Now we are going to prove that the minimal non-empty sets of the form $C_1 \triangle C_2$ where $C_1, C_2 \in \mathcal{C}_e$ are precisely all the 
+    circuits that doesn't contain $e$.\pn
+    
+    Suppose $C_1 \triangle C_2$ is minimal with such property but it is not a circuit. It is clear that $C_1 \triangle C_2$ doesn't contain $e$ as
+    $e \in C_1 \cap C_2$. We know from the theorem $9.1.2$ from \cite{Oxley}  that $C_1 \triangle C_2$ is union of disjoints circuits. Let $C$ be
+    any of those circuits, from the previous part we know that we can construct $C_i, C_j \in \mathcal{C}_e$ such that $C = C_i \triangle C_j$, contradicting
+    the minimality of $C_1 \triangle C_2$.
+\end{proof}
